@@ -6,13 +6,14 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tuyano.springboot.repositories.MyDataRepository;
 
-//@Controller
+@Controller
 public class HeloController6 {
 
 	@Autowired
@@ -36,8 +37,8 @@ public class HeloController6 {
 		mav.addObject("msg","MyDataのサンプルです。");
 		//Iterable<MyData> list = dao.getAll(); //●
 		//Iterable<MyData> list = repository.findAllOrderByName(); //dao.getAll(); //●
-		//Iterable<MyData> list = dao.findByAge(-17,99); //●
-		Iterable<MyData> list = repository.findByAge(25,40); //●
+		Iterable<MyData> list = dao.findByAge(25,80); //●
+		//Iterable<MyData> list = repository.findByAge2(25,40); //●
 		mav.addObject("datalist", list);
 		return mav;
 	}

@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+
+
 @SuppressWarnings("rawtypes")
 public class MsgDataDaoImpl implements MsgDataDao<MsgDataDao> {
 
@@ -30,4 +32,6 @@ public class MsgDataDaoImpl implements MsgDataDao<MsgDataDao> {
 				.createQuery("from MsgData where id = "
 				+ id).getSingleResult();
 	}
+
+
 }

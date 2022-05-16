@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -13,6 +15,15 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "msgdata")
+@NamedQueries ({
+		@NamedQuery(
+			name="findWithMessage",
+			query="from MsgData where message like :fname"
+		)
+})
+
+
+
 public class MsgData {
 
 	@Id
